@@ -1,10 +1,10 @@
-# live-coding-template
+# live-coding-typescript-vanilla-js
 
-`#module-name` `#technologies-used` `#technologies-used` `#assembler-institute-of-technology` `#master-in-software-engineering`
+`#fundamentals-ii` `#html` `#css` `#javascript` `#typescript` `#assembler-institute-of-technology` `#master-in-software-engineering`
 
-# Live Coding Session Name <!-- omit in toc -->
+# TypeScript Live Coding Session <!-- omit in toc -->
 
-Live Coding Session Description
+In this session we will learn how to install and configure a project with vanilla javascript and typescript
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -12,55 +12,66 @@ Live Coding Session Description
 - [Instructions](#instructions)
 - [Extra steps 💯](#extra-steps-)
 - [Requirements](#requirements)
-  [Learn More](#learn-more)
 - [License](#license)
 
 ## Getting Started
 
-What does the student need to follow this live coding session
-
-### The repo
-
-First, you will need to clone the repo:
+Create a new project in VSCode and install TypeScript globally with npm:
 
 ```bash
-$ git clone https://github.com/assembler-school/live-session-template.git
+$ npm install -g typescript
 ```
+Now initialize your typescript project with:
+```bash
+$ tsc -init
+```
+This command has created our typescript configuration file, now we have to edit some values so we can start working with vanilla js. We will go to the tsconfig.json and edit/add/uncomment some values.
+
+The first two are for specifying what syntax to use when the files are compiled to Javascript, we will work with native browser most compatible version, ES6. 
+```bash
+"target": "ES6"
+"module": "ES6"
+```
+With rootDir we set our main ts scripts folder and with outDir we set where the js files will be transpiled
+```bash
+"rootDir": "./src"
+"outDir": "./dist"
+```
+Finally we set to true noEmitOnError so no files are transpiled if there's an error
+```bash
+"noEmitOnError": true
+```
+> [!WARNING]  
+> You must run the project in a local server like when using [Visual Code Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer "Install Visual Code Live Server Extension") or you might get CORS error when importing files.
 
 ## Instructions
 
-What will we do in this live session
+We want to make a fetch request to the [Rick & Morty API](https://rickandmortyapi.com/ "Rick & Morty API") so we can get the first page of characters. We have to use import and export and make use of interfaces to get the character data, including enums when it's possible.
+
 
 ### Step 1
 
-First steps
+We'll create a Character.ts script inside ./src/types and code the interface needed for the character data. 
 
 ### Step 2
 
-More steps
+A main.ts script is needed so when the document is loaded a fetch request is made. Then create a container for each character data that will contain its name and image. 
 
 ### Step 3
 
-More steps
-
-### Step 4
-
-More steps
+When we click on a character container, the character id must be written in the console with a console.log.
 
 ## Extra steps 💯
 
-These are optional steps not included in the live coding session that students can finish by themselves
+- Add styles to the character containers.
+- Try to modularize your code as much as possible in functions.
+
 
 ## Requirements
 
-- Requirements for the session
-- More Requirements for the session
+- Use import and export
+- Use an interface for the data and enums for the data attributes that fit this data type.
 
-## Learn More
-
-You can learn more in [Some interesting doc](https://example.com).
-
-Another link for more info [More extra links](https://extra-links.com/).
 
 ## License
 
